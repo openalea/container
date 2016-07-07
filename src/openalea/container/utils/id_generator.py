@@ -14,131 +14,154 @@
 #
 #       VPlants WebSite : https://gforge.inria.fr/projects/vplants/
 #
-
-__doc__="""
-This module provide a generator for id numbers
+""" This module provide a generator for id numbers.
 """
 
-__license__= "Cecill-C"
-__revision__=" $Id$ "
 
-class IdMaxGenerator(object) :
-    def __init__ (self) :
+class IdMaxGenerator(object):
+    """Simple id generator based on returning an id
+    always superior to the highest fetched id.
+    """
+    def __init__(self):
+        self._id_max = None
+
         self.clear()
 
-    def get_id (self, id = None) :
-        if id is None :
+    def clear(self):
+        """ Reset the generator.
+        """
+        self._id_max = 0
+
+    def get_id(self, pid=None):
+        """Generate a new id.
+
+        args:
+         - pid (int): potential id to use, if None (default) generate a new id
+        """
+        if pid is None:
             ret = self._id_max
             self._id_max += 1
             return ret
-        else :		#Next two lines commented out by ML Walker because they interfere with graph development.
-            #if id < self._id_max :
-                #raise IndexError("id %d already used" % id)
-            self._id_max = max(self._id_max,id+1)
-            return id
+        else:
+            if pid < self._id_max:
+                raise IndexError("id %d already used" % pid)
+            self._id_max = max(self._id_max, pid + 1)
+            return pid
 
-    def release_id (self, id) :
-        pass
+    def release_id(self, pid):
+        """Mark the given id as available
 
-    def clear (self) :
+        args:
+         - pid (int): id to release
+        """
+        del pid
+
+
+class IdSetGenerator(object):
+    """Keep a set of available ids.
+    """
+    def __init__(self):
+        self._id_max = None
+        self._available_ids = set()
+
+        self.clear()
+
+    def clear(self):
         """ Reset the generator.
         """
         self._id_max = 0
+        self._available_ids.clear()
 
-    def enable_id_reuse(self, enabled = True) :
-        pass
+    def get_id(self, pid=None):
+        """Generate a new id.
 
-    def id_reuse_enabled(self):
-        return False
-
-class IdSetGenerator(object) :
-    def __init__ (self) :
-        self.clear()
-
-    def get_id (self, id = None) :
-        if id is None :
-            if len(self._available_ids) == 0 or not self.reuse_enabled:
+        args:
+         - pid (int): potential id to use, if None (default) generate a new id
+        """
+        if pid is None:
+            if len(self._available_ids) == 0:
                 ret = self._id_max
                 self._id_max += 1
                 return ret
-            else :
+            else:
                 return self._available_ids.pop()
-        else :
-            if id >= self._id_max :
-                self._available_ids.update(xrange(self._id_max,id))
-                self._id_max = id+1
-                return id
-            else :
-                try :
-                    self._available_ids.remove(id)
-                    return id
-                except KeyError :
-                    raise IndexError("id %d already used" % id)
+        else:
+            if pid >= self._id_max:
+                self._available_ids.update(xrange(self._id_max, pid))
+                self._id_max = pid + 1
+                return pid
+            else:
+                try:
+                    self._available_ids.remove(pid)
+                    return pid
+                except KeyError:
+                    raise IndexError("id %d already used" % pid)
 
-    def release_id (self, id) :
-        if id > self._id_max :
+    def release_id(self, pid):
+        """Mark the given id as available
+
+        args:
+         - pid (int): id to release
+        """
+        if pid > self._id_max:
             raise IndexError("id out of range")
-        elif id in self._available_ids :
-            raise IndexError("id already not used")
-        else :
-            self._available_ids.add(id)
+        elif pid in self._available_ids:
+            raise IndexError("id currently not in use")
+        else:
+            self._available_ids.add(pid)
 
-    def clear (self) :
+
+class IdGenerator(IdSetGenerator):
+    """Alias to define a default id generator.
+    """
+    pass
+
+
+class IdListGenerator(object):
+    """Keep a list of unused ids instead of a set.
+    """
+    def __init__(self):
+        self._id_max = None
+        self._id_list = []
+
+        self.clear()
+
+    def clear(self):
         """ Reset the generator.
         """
         self._id_max = 0
-        self._available_ids = set()
-        self.reuse_enabled = True
+        del self._id_list[:]
 
-    def enable_id_reuse(self, enabled = True) :
-        self.reuse_enabled = enabled
-
-    def id_reuse_enabled(self):
-        return self.reuse_enabled
-
-class IdGenerator (IdSetGenerator) :
-    pass
-
-class IdListGenerator(object) :
-    def __init__ (self) :
-        self.clear()
-
-    def get_id (self, id=None) :
-        if id is None :
-            if len(self._id_list)==0 or not self.reuse_enabled:
-                ret=self._id_max
-                self._id_max+=1
+    def get_id(self, pid=None):
+        if pid is None:
+            if len(self._id_list) == 0:
+                ret = self._id_max
+                self._id_max += 1
                 return ret
-            else :
+            else:
                 return self._id_list.pop()
-        else :
-            if id>=self._id_max :
-                self._id_list.extend(range(self._id_max,id))
-                self._id_max=id+1
-                return id
-            else :
-                try :
-                    ind=self._id_list.index(id)
+        else:
+            if pid >= self._id_max:
+                self._id_list.extend(range(self._id_max, pid))
+                self._id_max = pid + 1
+                return pid
+            else:
+                try:
+                    ind = self._id_list.index(pid)
                     del self._id_list[ind]
-                    return id
-                except ValueError :
-                    raise IndexError("id %d already used" % id)
+                    return pid
+                except ValueError:
+                    raise IndexError("id %d already used" % pid)
 
-    def release_id (self, id) :
-        if id>self._id_max :
+    def release_id(self, pid):
+        """Mark the given id as available
+
+        args:
+         - pid (int): id to release
+        """
+        if pid > self._id_max:
             raise IndexError("id out of range")
-        elif id in self._id_list :
-            raise IndexError("id already not used")
-        else :
-            self._id_list.append(id)
-
-    def clear (self) :
-        self._id_max=0
-        self._id_list=[]
-        self.reuse_enabled = True
-
-    def enable_id_reuse(self, enabled = True) :
-        self.reuse_enabled = enabled
-
-    def id_reuse_enabled(self):
-        return self.reuse_enabled
+        elif pid in self._id_list:
+            raise IndexError("id currently not in use")
+        else:
+            self._id_list.append(pid)

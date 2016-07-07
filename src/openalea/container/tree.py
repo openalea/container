@@ -84,7 +84,7 @@ class Tree(IRootedGraph,
         return list(self.vertices_iter())
 
     def __iter__(self):
-        return self.vertices()
+        return self.vertices_iter()
 
     #########################################################################
     # GraphConcept methods.

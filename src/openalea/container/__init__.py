@@ -12,11 +12,10 @@ __version__ = version.__version__
 from utils import IdDict
 from data_prop import Quantity, DataProp
 from graph import Graph
-from property_graph import PropertyGraph
-from temporal_property_graph import TemporalPropertyGraph
-from tree import Tree, PropertyTree
 from grid import Grid
+from property_graph import PropertyGraph
 from relation import Relation
+from tree import Tree, PropertyTree
 
 ################################
 #

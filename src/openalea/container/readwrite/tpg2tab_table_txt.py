@@ -43,7 +43,7 @@ def write_txt(filename, vertex_properties, path=""):
 
 
 def plot_mesures(filename, vertex_properties):
-    #regarder le nombre de paramètres correspondant à telle catégorie de nombre de cellules
+    #regarder le nombre de parametres correspondant a telle categorie de nombre de cellules
     graph=open_pkz_tpg(fleur)
     x=[]
     for p in vertex_properties:
