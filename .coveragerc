@@ -1,0 +1,17 @@
+# {# pkglts, coverage
+[html]
+title = openalea.container's coverage
+directory = build/htmlcov
+
+[run]
+source = openalea.container
+
+[report]
+exclude_lines =
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplemented
+    raise NotImplementedError
+show_missing = True
+
+# #}

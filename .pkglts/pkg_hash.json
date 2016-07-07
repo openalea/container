@@ -1,0 +1,59 @@
+{
+  ".coveragerc": {
+    "coverage": "A/xke0XDi+JU9ep7Xspd8mn2EnBGV0wiUbojMhuE1xAH2vbIMWYV05oA7eLmCHWggJ2XkjYMsJpdYTaHUV2VjA=="
+  }, 
+  ".gitignore": {
+    "github": "wVVlsQPP65I5Gg6bW37JENFtYxO6Naq7x+mO0DaDGFVbMPk2o5QJ3DUwMoYfkOfou9lcR/6DC0MXr7hnrTWc9g=="
+  }, 
+  "AUTHORS.rst": {
+    "doc": "xQaD9EQ0leeH2W4ckjZeg9foggtfr74i3+ctZrHMcmShZQFf1DXUUKQj1EIOcPJTgyklkqT/PXTYxmiruZizxQ=="
+  }, 
+  "CONTRIBUTING.rst": {}, 
+  "HISTORY.rst": {}, 
+  "LICENSE": {
+    "license": "21ExMhSzB2uXQuU1VoH7++nrb4u6TbesqGtJDpM39OLPWft9SJ2tJ956R6foYmkI9VuJay7SUrhFLPxxMEHLxg=="
+  }, 
+  "MANIFEST.in": {
+    "pysetup": "vzgcfdwg7fafu0G3HEmFsZnC8jB8sa4zeSFQ2ReZO+pUfGeynOcw4+CIzP/ZV7n5nmpGGI7xqcdcPtOFfoivdQ=="
+  }, 
+  "README.rst": {
+    "doc": "z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg=="
+  }, 
+  "doc/Makefile": {
+    "sphinx": "C58jxdu8XJNOoaWOw7VWy4LwFmS8lTQt/JeZLt5JozMSJ503plOZchucx+vAEzELbx/Czs/h9pshe9s+9HeOeQ=="
+  }, 
+  "doc/_static/nonempty.txt": {}, 
+  "doc/authors.rst": {}, 
+  "doc/conf.py": {
+    "sphinx": "zp2ttR9n9BYKMP6uMvfPngQ0rGNG87uz9iCEHd12MSbwjXLBhzEibukx1gbCppdn1cAxwqlOhwl25T6jMAHgtw=="
+  }, 
+  "doc/contributing.rst": {}, 
+  "doc/history.rst": {}, 
+  "doc/index.rst": {}, 
+  "doc/installation.rst": {}, 
+  "doc/make.bat": {
+    "sphinx": "oA67PK7JSR3w9u1V0gOXFZAb8qgfgUJ0wQ46cVXu7M3iJyAbLf76WkEqw6Y1r5Q6EvHAogcjmImdGsOpiYZ22g=="
+  }, 
+  "doc/readme.rst": {}, 
+  "doc/usage.rst": {}, 
+  "dvlpt_requirements.txt": {
+    "pysetup": "UQJqyb7YIaBZSsbBzHa4g943V6w4PfULzPZwHKLPmkkKthgekqqdh4XqGpVjQrr3D9hF4m1qAu34UIT1ceUidw=="
+  }, 
+  "requirements.txt": {
+    "pysetup": "z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg=="
+  }, 
+  "setup.cfg": {
+    "pysetup": "MkthA7jfrGiJFe6s3pVzoATl5Tg3xx36IWxKlNAOprwZeWeiRmOKwNd19mjEqrjC/wcJYjrEentVIn76ZktSxQ=="
+  }, 
+  "setup.py": {
+    "pysetup.call": "2wHuP94SpWKZpqOzExkQGTxnhGPgBHK3qOdPn0Ncstj5FkZ7FBGGM/inqAXaI4QLKQtTNlOUYRGSkYUWAUcf1w==", 
+    "pysetup.kwds": "yHRkY7kIfFF3erLFQF8URh5mxQu/XyhC7nXO5lR5tYbKmKguAnX6ZN/6Lvt9/gKUJW5AWGEZc/v0RvOt8w1pAQ=="
+  }, 
+  "src/openalea/container/__init__.py": {
+    "base": "gR33dW0qqYmsV9NSNB+DD8XmuxnC2t0mKjnMoU5728qh97fSER6MbX+3QKxpZDLByZToaAay4xhx8acxketJmA=="
+  }, 
+  "src/openalea/container/version.py": {
+    "version": "DtejGw1mc3rfxdq/HekMG67q8lMaYbX9tSnKZvMbdBOMz1ESq2JLH+ojKt/GPgLymMG0pXP+GNmsOLF1xZ1QyA=="
+  }, 
+  "test/__init__.py": {}
+}
