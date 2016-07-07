@@ -5,9 +5,9 @@ openalea.container
 .. {# pkglts, doc
 
 
-.. image:: https://readthedocs.org/projects/container/badge/?version=latest
+.. image:: https://readthedocs.org/projects/openalea-container/badge/?version=latest
     :alt: Documentation status
-    :target: https://container.readthedocs.io/en/latest/?badge=latest
+    :target: https://openalea-container.readthedocs.io/en/latest/?badge=latest
 
 .. #}
 

@@ -42,7 +42,7 @@
     ]
   }, 
   "readthedocs": {
-    "project": "{{ github.project }}"
+    "project": "openalea-container"
   }, 
   "sphinx": {
     "autodoc_dvlpt": true, 
