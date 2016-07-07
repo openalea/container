@@ -8,31 +8,31 @@
   "base": {
     "authors": [
       [
-        "Christophe Pradal",
+        "Christophe Pradal", 
         "christophe dot pradal at cirad dot fr"
-      ],
+      ], 
       [
-        "revesansparole",
+        "revesansparole", 
         "revesansparole@gmail.com"
       ]
     ], 
-    "namespace": "openalea",
+    "namespace": "openalea", 
     "pkgname": "container", 
     "url": null
   }, 
   "coverage": {}, 
   "doc": {
-    "description": "Container is a set of data structures used in openalea such as : graph, grid, topomesh",
+    "description": "Container is a set of data structures used in openalea such as : graph, grid, topomesh", 
     "keywords": []
   }, 
   "github": {
-    "owner": "openalea",
+    "owner": "openalea", 
     "project": "{{ base.pkgname }}", 
     "url": "https://github.com/{{ github.owner }}/{{ github.project }}"
   }, 
   "license": {
     "name": "cecill-c", 
-    "organization": "CIRAD/INRIA",
+    "organization": "CIRAD/INRIA", 
     "project": "{{ base.pkgname }}", 
     "year": 2015
   }, 
@@ -41,14 +41,17 @@
       "27"
     ]
   }, 
+  "readthedocs": {
+    "project": "{{ github.project }}"
+  }, 
   "sphinx": {
     "autodoc_dvlpt": true, 
     "theme": "default"
   }, 
   "test": {}, 
   "version": {
-    "major": 2,
-    "minor": 3,
+    "major": 2, 
+    "minor": 3, 
     "post": 0
   }
 }
