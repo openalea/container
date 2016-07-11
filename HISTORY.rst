@@ -1,3 +1,8 @@
+.. _changelog:
+
+History
+=======
+
 OpenAlea.Container 0.7.0
 ------------------------
 * Fix several bugs in remove_tree, add_tree, ...
