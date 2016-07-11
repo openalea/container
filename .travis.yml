@@ -11,8 +11,6 @@ python:
 addons:
   apt:
     packages:
-      - python-numpy
-      - python-scipy
 # {# pkglts, travis.addons
 
  #}
