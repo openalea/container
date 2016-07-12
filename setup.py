@@ -55,7 +55,7 @@ setup_kwds['pylint_packages'] = ['src/container',
                                  'src/container/generator',
                                  'src/openalea/iterator',
                                  'src/openalea/traversal']
-setup_kwds['entry_points']['wralea'] = ['container.mesh = container_wralea.mesh']
+setup_kwds['entry_points']['wralea'] = ['openalea.container.mesh = openalea.container_wralea.mesh']
 
 # do not change things below
 # {# pkglts, pysetup.call

@@ -13,59 +13,65 @@
 #       OpenAlea WebSite : http://openalea.gforge.inria.fr
 #
 
-__doc__="""
+__doc__ = """
 node definition for container.mesh package
 """
 
-__license__= "Cecill-C"
-__revision__=" $Id$ "
+__license__ = "Cecill-C"
+__revision__ = " $Id$ "
 
-from openalea.vmanalysis.serial.mesh_read import read
 from openalea.container import topomesh_algo as algo
+from openalea.container.topomesh_txt import read_topomesh
+
 
 #################################################
 #
 #       read write
 #
 #################################################
-def read_mesh (filename) :#TODO find a way to define properties more conveniently
+def read_mesh(
+        filename):  # TODO find a way to define properties more conveniently
     """
     read a mesh from a file and return
     a tuple mesh,mesh_prop
     """
     print "read mesh"
-    return read(filename)
+    return read_topomesh(filename)[0]
+
 
 #################################################
 #
 #       basic edition
 #
 #################################################
-def remove_wisp (mesh, scale, wid) :
+def remove_wisp(mesh, scale, wid):
     """
     remove a wisp from the mesh
     and return it
     scale: scale of the wisp
     wid: id of the wisp to remove
     """
-    mesh.remove_wisp(scale,wid)
+    mesh.remove_wisp(scale, wid)
     return mesh,
 
-def add_wisp (mesh, scale, wid) :
+
+def add_wisp(mesh, scale, wid):
     """
     add a wisp in the mesh
     and return the mesh and the id of the added wisp
     scale: scale of the wisp
     wid: id of the wisp to add (may be None)
     """
-    wid = mesh.add_wisp(scale,wid)
-    return mesh,wid
+    wid = mesh.add_wisp(scale, wid)
+    return mesh, wid
+
+
 #################################################
 #
 #       cleaning edition
 #
 #################################################
-def clean_geometry (mesh) :
+def clean_geometry(mesh):
     """
     remove wisps not geometrically defined
     i.e. with no borders
@@ -73,7 +79,8 @@ def clean_geometry (mesh) :
     algo.clean_geometry(mesh)
     return mesh,
 
-def clean_orphans (mesh) :
+
+def clean_orphans(mesh):
     """
     remove wisps with no regions
     """
