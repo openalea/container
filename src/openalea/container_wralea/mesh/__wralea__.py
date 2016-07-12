@@ -13,12 +13,9 @@
 #       OpenAlea WebSite : http://openalea.gforge.inria.fr
 #
 
-__doc__="""
+__doc__ = """
 node definition for container.mesh package
 """
-
-__license__= "Cecill-C"
-__revision__=" $Id$ "
 
 from openalea.core import Factory
 from openalea.core.interface import *
@@ -39,15 +36,15 @@ __all__ = []
 #       read
 #
 #########################################
-read = Factory( name= "read",
-                                description= "",
-                                category = "",
-                                nodemodule = "mesh",
-                                nodeclass = "read",
-                                inputs=(dict(name="filename", interface=IFileStr,),),
-                                outputs=(dict(name="mesh", interface=None,),
-                                                dict(name="mesh_prop", interface=None,),),
-                        )
+read = Factory(name="read",
+               description="",
+               category="",
+               nodemodule="mesh",
+               nodeclass="read",
+               inputs=(dict(name="filename", interface=IFileStr, ),),
+               outputs=(dict(name="mesh", interface=None, ),
+                        dict(name="mesh_prop", interface=None, ),),
+               )
 
 __all__.append('read')
 
@@ -56,30 +53,30 @@ __all__.append('read')
 #       edition
 #
 #########################################
-remove_wisp = Factory( name= "remove_wisp",
-                                description= "",
-                                category = "",
-                                nodemodule = "mesh",
-                                nodeclass = "remove_wisp",
-                                inputs=(dict(name="mesh", interface=None,),
-                                                dict(name="scale", interface=IInt,),
-                                                dict(name="wid", interface=IInt),),
-                                outputs=(dict(name="mesh", interface=None,),),
-                        )
+remove_wisp = Factory(name="remove_wisp",
+                      description="",
+                      category="",
+                      nodemodule="mesh",
+                      nodeclass="remove_wisp",
+                      inputs=(dict(name="mesh", interface=None, ),
+                              dict(name="scale", interface=IInt, ),
+                              dict(name="wid", interface=IInt),),
+                      outputs=(dict(name="mesh", interface=None, ),),
+                      )
 
 __all__.append('remove_wisp')
 
-add_wisp = Factory( name= "add_wisp",
-                                description= "",
-                                category = "",
-                                nodemodule = "mesh",
-                                nodeclass = "add_wisp",
-                                inputs=(dict(name="mesh", interface=None,),
-                                                dict(name="scale", interface=IInt,),
-                                                dict(name="wid", interface=IInt, value=None),),
-                                outputs=(dict(name="mesh", interface=None,),
-                                                dict(name="wid", interface=IInt,),),
-                        )
+add_wisp = Factory(name="add_wisp",
+                   description="",
+                   category="",
+                   nodemodule="mesh",
+                   nodeclass="add_wisp",
+                   inputs=(dict(name="mesh", interface=None, ),
+                           dict(name="scale", interface=IInt, ),
+                           dict(name="wid", interface=IInt, value=None),),
+                   outputs=(dict(name="mesh", interface=None, ),
+                            dict(name="wid", interface=IInt, ),),
+                   )
 
 __all__.append('add_wisp')
 
@@ -88,24 +85,24 @@ __all__.append('add_wisp')
 #       cleaning
 #
 #########################################
-clean_geometry = Factory( name= "clean_geometry",
-                                description= "",
-                                category = "",
-                                nodemodule = "mesh",
-                                nodeclass = "clean_geometry",
-                                inputs=(dict(name="mesh", interface=None,),),
-                                outputs=(dict(name="mesh", interface=None,),),
-                        )
+clean_geometry = Factory(name="clean_geometry",
+                         description="",
+                         category="",
+                         nodemodule="mesh",
+                         nodeclass="clean_geometry",
+                         inputs=(dict(name="mesh", interface=None, ),),
+                         outputs=(dict(name="mesh", interface=None, ),),
+                         )
 
 __all__.append('clean_geometry')
 
-clean_orphans = Factory( name= "clean_orphans",
-                                description= "",
-                                category = "",
-                                nodemodule = "mesh",
-                                nodeclass = "clean_orphans",
-                                inputs=(dict(name="mesh", interface=None,),),
-                                outputs=(dict(name="mesh", interface=None,),),
+clean_orphans = Factory(name="clean_orphans",
+                        description="",
+                        category="",
+                        nodemodule="mesh",
+                        nodeclass="clean_orphans",
+                        inputs=(dict(name="mesh", interface=None, ),),
+                        outputs=(dict(name="mesh", interface=None, ),),
                         )
 
 __all__.append('clean_orphans')
