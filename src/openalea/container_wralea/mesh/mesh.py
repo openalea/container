@@ -29,8 +29,8 @@ from openalea.container.topomesh_txt import read_topomesh
 #       read write
 #
 #################################################
-def read_mesh(
-        filename):  # TODO find a way to define properties more conveniently
+# TODO find a way to define properties more conveniently
+def read_mesh(filename):
     """
     read a mesh from a file and return
     a tuple mesh,mesh_prop
