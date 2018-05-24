@@ -14,7 +14,7 @@ build:
 
 requirements:
   build:
-    - openalea.deploy #==2.0.0
+    - openalea.deploy
   run:
     - python
     - openalea.deploy
