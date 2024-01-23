@@ -93,3 +93,5 @@ doc/_dvlpt/
 
 # user custom filters
 
+#Mac
+.DS_Store
