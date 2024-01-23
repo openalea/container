@@ -4,7 +4,7 @@
 # {# pkglts, pysetup.kwds
 # format setup arguments
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 
 short_descr = "Container is a set of data structures used in openalea such as : graph, grid, topomesh"
@@ -17,6 +17,7 @@ version = {}
 with open("src/openalea/container/version.py") as fp:
     exec(fp.read(), version)
 
+packages = find_namespace_packages(where='src', include=['openalea.*'])
 
 setup_kwds = dict(
     name='openalea.container',
@@ -29,7 +30,7 @@ setup_kwds = dict(
     license='cecill-c',
     zip_safe=False,
 
-    packages=find_packages('src'),
+    packages=packages,
     package_dir={'': 'src'},
     install_requires=[
         ],
